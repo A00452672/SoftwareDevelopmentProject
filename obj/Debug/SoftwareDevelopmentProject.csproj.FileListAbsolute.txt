@@ -1,3 +1,4 @@
+C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\obj\Debug\SoftwareDevelopmentProject.csproj.CoreCompileInputs.cache
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\SoftwareDevelopmentProject.dll.config
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\SoftwareDevelopmentProject.dll
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\SoftwareDevelopmentProject.pdb
@@ -76,7 +77,6 @@ C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\System.Web.WebPages
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\Newtonsoft.Json.xml
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\Antlr3.Runtime.pdb
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\obj\Debug\SoftwareDevelopmentProject.csproj.CoreCompileInputs.cache
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\obj\Debug\SoftwareDevelopmentProject.csproj.CopyComplete
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\obj\Debug\SoftwareDevelopmentProject.dll
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\obj\Debug\SoftwareDevelopmentProject.pdb

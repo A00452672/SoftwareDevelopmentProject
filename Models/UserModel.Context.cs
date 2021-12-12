@@ -13,10 +13,10 @@ namespace SoftwareDevelopmentProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DatabaseEntities1 : DbContext
+    public partial class UserModel : DbContext
     {
-        public DatabaseEntities1()
-            : base("name=DatabaseEntities1")
+        public UserModel()
+            : base("name=UserModel")
         {
         }
     

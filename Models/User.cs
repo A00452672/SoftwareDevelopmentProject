@@ -11,12 +11,18 @@ namespace SoftwareDevelopmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
+        [Required(ErrorMessage = "Username is required")]
+        [DisplayName("User Name")]
         public string username { get; set; }
+
+        [DisplayName("Password")]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage ="Password is required")]
         public string password { get; set; }
-        public string mailid { get; set; }
-        public bool isadmin { get; set; }
     }
 }
