@@ -46,10 +46,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
@@ -133,6 +133,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Sport.cs">
+      <DependentUpon>SportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SportModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SportModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SportModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SportModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\User.cs">
       <DependentUpon>UserModel.tt</DependentUpon>
     </Compile>
@@ -166,6 +184,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\SportModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SportModel.edmx</DependentUpon>
+      <LastGenOutput>SportModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\SportModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SportModel.edmx</DependentUpon>
+      <LastGenOutput>SportModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\UserModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserModel.edmx</DependentUpon>
@@ -184,6 +212,13 @@
     </EntityDeploy>
     <Content Include="Models\UserModel.edmx.diagram">
       <DependentUpon>UserModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SportModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SportModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SportModel.edmx.diagram">
+      <DependentUpon>SportModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -212,6 +247,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
+    <Content Include="Views\User\ViewAllSports.cshtml" />
+    <Content Include="Views\User\AddASportView.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

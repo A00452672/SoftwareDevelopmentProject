@@ -20,9 +20,18 @@ namespace SoftwareDevelopmentProject.Models
         [DisplayName("User Name")]
         public string username { get; set; }
 
+
         [DisplayName("Password")]
         [DataType(DataType.Password)]
         [Required(ErrorMessage ="Password is required")]
         public string password { get; set; }
+
+
+
+        [DisplayName("Confirm Password")]
+        [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Passwords doesnt match")]
+        [Compare("password")]
+        public string confirmpassword { get; set; }
     }
 }

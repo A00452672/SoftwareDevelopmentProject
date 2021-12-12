@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SportsModelStoreContainer" CdmEntityContainer="SportModel">
+    <EntitySetMapping Name="Sports">
+      <EntityTypeMapping TypeName="SportsModel.Sport">
+        <MappingFragment StoreEntitySet="Sports">
+          <ScalarProperty Name="sport_id" ColumnName="sport_id" />
+          <ScalarProperty Name="sport_name" ColumnName="sport_name" />
+          <ScalarProperty Name="sport_description" ColumnName="sport_description" />
+          <ScalarProperty Name="sport_rate" ColumnName="sport_rate" />
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
