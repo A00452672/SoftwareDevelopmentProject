@@ -9,6 +9,8 @@ namespace SoftwareDevelopmentProject.Controllers
 {
     public class UserController : Controller
     {
+        public static string errorMessage = null;
+        public static string successMessage = null;
         // GET: Use
         [HttpGet]
         public ActionResult Registration(int id = 0)
@@ -64,36 +66,62 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpGet]
         public ActionResult ViewAllSports()
         {
-            Sport sportModel = new Sport();
-            return View("ViewAllSports", sportModel);
+            using (SportModel sportModel = new SportModel())
+            {
+                return View(sportModel.Sports.ToList());
+            }
+                
         }
 
         [HttpGet]
         public ActionResult AddASportView()
         {
+            if (errorMessage != null)
+                ViewBag.duplicateMessage = errorMessage; 
+            if (successMessage != null)
+                ViewBag.SuccessMessage = successMessage;
+            errorMessage = null;
+            successMessage = null;
             return View("AddASportView", new Sport());
         }
 
         [HttpPost]
         public ActionResult AddASportView(Sport sport)
         {
-           
+
             using (SportModel sportmodel = new SportModel())
             {
                 if (sportmodel.Sports.Any(x => x.sport_id == sport.sport_id))
                 {
                     ModelState.Clear();
-                    ViewBag.duplicateMessage = "sport already exists!!!";
+                    errorMessage = "sport already exists!!!";
                     return RedirectToAction("AddASportView", "User");
 
                 }
+                try {
                 sportmodel.Sports.Add(sport);
                 sportmodel.SaveChanges();
             }
+                catch(Exception e)
+                {
+                    ModelState.Clear();
+                    return RedirectToAction("Error", "User");
+
+                }
+
+            }
             ModelState.Clear();
-            ViewBag.SuccessMessage = "Sport created successfully";
+            successMessage  = "Sport created successfully";
+       
 
             return RedirectToAction("AddASportView", "User");
+        }
+
+
+        [HttpGet]
+        public ActionResult Error()
+        {
+            return View("Error");
         }
     }
 }

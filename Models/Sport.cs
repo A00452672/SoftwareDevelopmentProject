@@ -26,6 +26,7 @@ namespace SoftwareDevelopmentProject.Models
 
 
         [DisplayName("SPORT DESCRIPTION")]
+        [Required(ErrorMessage = "SPORT DESCRIPTION is required")]
         public string sport_description { get; set; }
 
 
