@@ -134,6 +134,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BookingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reservation.cs">
+      <DependentUpon>BookingModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Sport.cs">
       <DependentUpon>SportModel.tt</DependentUpon>
     </Compile>
@@ -185,6 +203,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\BookingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookingModel.edmx</DependentUpon>
+      <LastGenOutput>BookingModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\BookingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookingModel.edmx</DependentUpon>
+      <LastGenOutput>BookingModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\SportModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SportModel.edmx</DependentUpon>
@@ -207,6 +235,13 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\SportModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SportModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SportModel.edmx.diagram">
+      <DependentUpon>SportModel.edmx</DependentUpon>
+    </Content>
     <EntityDeploy Include="Models\UserModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
@@ -214,12 +249,12 @@
     <Content Include="Models\UserModel.edmx.diagram">
       <DependentUpon>UserModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\SportModel.edmx">
+    <EntityDeploy Include="Models\BookingModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SportModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>BookingModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\SportModel.edmx.diagram">
-      <DependentUpon>SportModel.edmx</DependentUpon>
+    <Content Include="Models\BookingModel.edmx.diagram">
+      <DependentUpon>BookingModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -251,9 +286,7 @@
     <Content Include="Views\User\AddASportView.cshtml" />
     <Content Include="Views\User\ViewAllSports.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Booking\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

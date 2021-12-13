@@ -23,7 +23,7 @@ namespace SoftwareDevelopmentProject.Models
 
         [DisplayName("Password")]
         [DataType(DataType.Password)]
-        [Required(ErrorMessage ="Password is required")]
+        [Required(ErrorMessage = "Password is required")]
         public string password { get; set; }
 
 
@@ -33,5 +33,7 @@ namespace SoftwareDevelopmentProject.Models
         [Required(ErrorMessage = "Passwords doesnt match")]
         [Compare("password")]
         public string confirmpassword { get; set; }
+
+        public int user_id { get; set; }
     }
 }

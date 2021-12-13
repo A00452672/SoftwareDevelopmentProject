@@ -11,6 +11,7 @@ namespace SoftwareDevelopmentProject.Controllers
 
         public ActionResult BookingASport(int id)
         {
+            ViewBag.id = id;
             return View("BookTheSport");
         }
 
