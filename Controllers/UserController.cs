@@ -77,7 +77,7 @@ namespace SoftwareDevelopmentProject.Controllers
         public ActionResult AddASportView()
         {
             if (errorMessage != null)
-                ViewBag.duplicateMessage = errorMessage; 
+                ViewBag.duplicateMessage = errorMessage;
             if (successMessage != null)
                 ViewBag.SuccessMessage = successMessage;
             errorMessage = null;
@@ -88,12 +88,12 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpPost]
         public ActionResult AddASportView(Sport sport)
         {
-
+            sport.sport_id = 1;
             using (SportModel sportmodel = new SportModel())
             {
-                if (sportmodel.Sports.Any(x => x.sport_id == sport.sport_id))
+                if (sportmodel.Sports.Any(x => x.sport_name == sport.sport_name))
                 {
-                    ModelState.Clear();
+                    //ModelState.Clear();
                     errorMessage = "sport already exists!!!";
                     return RedirectToAction("AddASportView", "User");
 

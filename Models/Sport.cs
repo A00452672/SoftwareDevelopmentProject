@@ -13,11 +13,9 @@ namespace SoftwareDevelopmentProject.Models
     using System.Collections.Generic;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class Sport
     {
-        [DisplayName("SPORT ID")]
-        [Required(ErrorMessage = "SPORT ID is required")]
         public int sport_id { get; set; }
 
         [DisplayName("SPORT NAME")]
@@ -38,5 +36,6 @@ namespace SoftwareDevelopmentProject.Models
         [DisplayName("CURRENCY ID")]
         [Required(ErrorMessage = "CURRENCY ID is required")]
         public int currency_id { get; set; }
+
     }
 }

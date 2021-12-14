@@ -9,9 +9,9 @@
           <Key>
             <PropertyRef Name="sport_id" />
           </Key>
-          <Property Name="sport_id" Type="int" Nullable="false" />
+          <Property Name="sport_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="sport_name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="sport_description" Type="varchar" MaxLength="500" />
+          <Property Name="sport_description" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="sport_rate" Type="int" Nullable="false" />
           <Property Name="currency_id" Type="int" Nullable="false" />
         </EntityType>
@@ -27,9 +27,9 @@
           <Key>
             <PropertyRef Name="sport_id" />
           </Key>
-          <Property Name="sport_id" Type="Int32" Nullable="false" />
+          <Property Name="sport_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="sport_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="sport_description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="sport_description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="sport_rate" Type="Int32" Nullable="false" />
           <Property Name="currency_id" Type="Int32" Nullable="false" />
         </EntityType>

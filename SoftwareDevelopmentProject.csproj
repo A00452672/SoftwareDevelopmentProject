@@ -134,23 +134,41 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookingModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BookingModel.Context.tt</DependentUpon>
+    <Compile Include="Models\CustomerPayment.cs">
+      <DependentUpon>PaymentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookingModel.cs">
+    <Compile Include="Models\PaymentModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookingModel.tt</DependentUpon>
+      <DependentUpon>PaymentModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\BookingModel.Designer.cs">
+    <Compile Include="Models\PaymentModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BookingModel.edmx</DependentUpon>
+      <DependentUpon>PaymentModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PaymentModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\reservation.cs">
-      <DependentUpon>BookingModel.tt</DependentUpon>
+      <DependentUpon>reservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reservationModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reservationModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reservationModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reservationModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reservationModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>reservationModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Sport.cs">
       <DependentUpon>SportModel.tt</DependentUpon>
@@ -203,15 +221,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\BookingModel.Context.tt">
+    <Content Include="Models\PaymentModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookingModel.edmx</DependentUpon>
-      <LastGenOutput>BookingModel.Context.cs</LastGenOutput>
+      <DependentUpon>PaymentModel.edmx</DependentUpon>
+      <LastGenOutput>PaymentModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\BookingModel.tt">
+    <Content Include="Models\PaymentModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BookingModel.edmx</DependentUpon>
-      <LastGenOutput>BookingModel.cs</LastGenOutput>
+      <DependentUpon>PaymentModel.edmx</DependentUpon>
+      <LastGenOutput>PaymentModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\reservationModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>reservationModel.edmx</DependentUpon>
+      <LastGenOutput>reservationModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\reservationModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>reservationModel.edmx</DependentUpon>
+      <LastGenOutput>reservationModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\SportModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -235,13 +263,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\SportModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SportModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\SportModel.edmx.diagram">
-      <DependentUpon>SportModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\UserModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
@@ -249,12 +270,26 @@
     <Content Include="Models\UserModel.edmx.diagram">
       <DependentUpon>UserModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\BookingModel.edmx">
+    <EntityDeploy Include="Models\PaymentModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BookingModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PaymentModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\BookingModel.edmx.diagram">
-      <DependentUpon>BookingModel.edmx</DependentUpon>
+    <Content Include="Models\PaymentModel.edmx.diagram">
+      <DependentUpon>PaymentModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\reservationModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>reservationModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\reservationModel.edmx.diagram">
+      <DependentUpon>reservationModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\SportModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SportModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\SportModel.edmx.diagram">
+      <DependentUpon>SportModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -285,6 +320,10 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\AddASportView.cshtml" />
     <Content Include="Views\User\ViewAllSports.cshtml" />
+    <Content Include="Views\Shared\ReservationView.cshtml" />
+    <Content Include="Views\Shared\PaymentSucess.cshtml" />
+    <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Include="Views\Shared\PaymentView.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
