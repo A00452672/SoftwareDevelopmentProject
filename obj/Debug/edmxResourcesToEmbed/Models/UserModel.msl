@@ -1,12 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="UserModel">
-    <EntitySetMapping Name="Users">
-      <EntityTypeMapping TypeName="DatabaseModel.User">
-        <MappingFragment StoreEntitySet="User">
-          <ScalarProperty Name="username" ColumnName="username" />
+  <EntityContainerMapping StorageEntityContainer="UserModelStoreContainer" CdmEntityContainer="AzureConn">
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="UserModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="is_admin" ColumnName="is_admin" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

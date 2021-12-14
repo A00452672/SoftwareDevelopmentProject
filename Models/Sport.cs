@@ -11,31 +11,13 @@ namespace SoftwareDevelopmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Sport
     {
         public int sport_id { get; set; }
-
-        [DisplayName("SPORT NAME")]
-        [Required(ErrorMessage = "SPORT NAME is required")]
         public string sport_name { get; set; }
-
-
-        [DisplayName("SPORT DESCRIPTION")]
-        [Required(ErrorMessage = "SPORT DESCRIPTION is required")]
         public string sport_description { get; set; }
-
-
-        [DisplayName("SPORT RATE")]
-        [Required(ErrorMessage = "SPORT RATE is required")]
         public int sport_rate { get; set; }
-
-
-        [DisplayName("CURRENCY ID")]
-        [Required(ErrorMessage = "CURRENCY ID is required")]
         public int currency_id { get; set; }
-
     }
 }

@@ -134,6 +134,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\currency.cs">
+      <DependentUpon>CurrencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurrencyModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrencyModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurrencyModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrencyModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CurrencyModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\CustomerPayment.cs">
       <DependentUpon>PaymentModel.tt</DependentUpon>
     </Compile>
@@ -188,7 +206,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SportModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\User.cs">
+    <Compile Include="Models\user.cs">
       <DependentUpon>UserModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserModel.Context.cs">
@@ -221,6 +239,16 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\CurrencyModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
+      <LastGenOutput>CurrencyModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\CurrencyModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
+      <LastGenOutput>CurrencyModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\PaymentModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PaymentModel.edmx</DependentUpon>
@@ -263,13 +291,6 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\UserModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\UserModel.edmx.diagram">
-      <DependentUpon>UserModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\PaymentModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PaymentModel.Designer.cs</LastGenOutput>
@@ -284,12 +305,26 @@
     <Content Include="Models\reservationModel.edmx.diagram">
       <DependentUpon>reservationModel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\UserModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserModel.edmx.diagram">
+      <DependentUpon>UserModel.edmx</DependentUpon>
+    </Content>
     <EntityDeploy Include="Models\SportModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SportModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\SportModel.edmx.diagram">
       <DependentUpon>SportModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\CurrencyModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CurrencyModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\CurrencyModel.edmx.diagram">
+      <DependentUpon>CurrencyModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

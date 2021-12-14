@@ -16,7 +16,7 @@ namespace SoftwareDevelopmentProject.Models
     public partial class UserModel : DbContext
     {
         public UserModel()
-            : base("name=UserModel")
+            : base("name=AzureConn")
         {
         }
     
@@ -25,6 +25,6 @@ namespace SoftwareDevelopmentProject.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<user> users { get; set; }
     }
 }

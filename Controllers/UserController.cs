@@ -15,51 +15,55 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpGet]
         public ActionResult Registration(int id = 0)
         {
-            User userModel = new User();
+            user userModel = new user();
             return View(userModel);
         }
         [HttpPost]
-        public ActionResult Registration(User userModel)
+        public ActionResult Registration(user userModel)
         {
             using (UserModel dbmodel = new UserModel())
             {
-                if(dbmodel.Users.Any(x => x.username == userModel.username))
+                if(dbmodel.users.Any(x => x.email == userModel.email))
                 {
-                    ViewBag.duplicateMessage = "Username already taken!!!";
+                    ViewBag.duplicateMessage = "Email already used!!!";
                     return View("Registration", userModel);
                 }
-                dbmodel.Users.Add(userModel);
+                
+                dbmodel.users.Add(userModel);
                 dbmodel.SaveChanges();
             }
             ModelState.Clear();
             ViewBag.SuccessMessage = "Registration Success";
 
-            return View("Registration", new User());
+            return View("Registration", new user());
         }
 
         [HttpGet]
         public ActionResult Login(int id = 0)
         {
-            User userModel = new User();
+            user userModel = new user();
             return View(userModel);
         }
 
         [HttpPost]
-        public ActionResult Login(User userModel)
+        public ActionResult Login(user userModel)
         {
             using (UserModel dbmodel = new UserModel())
             {
-                if (dbmodel.Users.Any(x => x.username == userModel.username && x.password == userModel.password))
+                foreach(var item in (dbmodel.users.Where(x => x.email == userModel.email && x.password == userModel.password)))
                 {
-                    if (userModel.username == "admin")
+                    if (item.is_admin == 1)
+                    {
                         return RedirectToAction("AddASportView", "User");
-
-                    return RedirectToAction("ViewAllSports", "User");
+                    }
+                    if (item.is_admin == 0)
+                    {
+                        return RedirectToAction("ViewAllSports", "User");
+                    }
                 }
             }
-        
             ViewBag.InvalidCredentialsMessage = "Invalid credentials";
-            return View("Login", new User());
+            return View("Login", new user());
         }
 
 

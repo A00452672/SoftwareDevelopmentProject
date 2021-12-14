@@ -9,52 +9,24 @@
 <!--<p>
     @Html.ActionLink("Create New", "Create")
 </p> -->
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.sport_name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sport_description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.sport_rate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.currency_id)
-        </th>
-        <th>
-             Operation
-        </th>
-        <th></th>
-    </tr>
 
+
+<br />
+
+<div class="row">
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.sport_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sport_description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sport_rate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.currency_id)
-            </td>
-            <td>
-                <!--  @Html.ActionLink("BOOK THIS SPORT", "Edit", new { id = item.sport_id }) -->
+        <div class="col-sm-4" style="padding: 20px;">
+            <div class="card text-center">
+                <div class="card-body" style="border: 2px solid;">
+                    <h5 class="card-title">@Html.DisplayFor(model => item.sport_name)</h5>
+                    <p class="card-text">@Html.DisplayFor(model => item.sport_description)</p>
 
-                @Html.ActionLink(linkText: "BOOK THIS SPORT", actionName: "BookingASport", controllerName: "Booking", routeValues: new { id = item.sport_id },
-                 htmlAttributes: null)
-
-
-                <!--   @Html.ActionLink("Details", "Details", new { id = item.sport_id })
-    @Html.ActionLink("Delete", "Delete", new { id = item.sport_id }) -->
-            </td>
-        </tr>
+                    @Html.ActionLink(linkText: "BOOK SPORT", actionName: "BookingASport", controllerName: "Booking", routeValues: new { id = item.sport_id },
+htmlAttributes: new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
     }
+</div>
 
-</table>

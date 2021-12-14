@@ -14,26 +14,26 @@ namespace SoftwareDevelopmentProject.Models
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
-    public partial class User
+    public partial class user
     {
-        [Required(ErrorMessage = "Username is required")]
-        [DisplayName("User Name")]
-        public string username { get; set; }
+        [Required(ErrorMessage = "Name is required")]
+        [DisplayName("Full Name")]
+        public string name { get; set; }
 
+        [Required(ErrorMessage = "Email is required")]
+        [DisplayName("User Email")]
+        [DataType(DataType.EmailAddress)]
+        public string email { get; set; }
+
+        [DisplayName("Phone Number")]
+        [Required(ErrorMessage = "Phone number is required")]
+        public string phone { get; set; }
 
         [DisplayName("Password")]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Password is required")]
         public string password { get; set; }
-
-
-
-        [DisplayName("Confirm Password")]
-        [DataType(DataType.Password)]
-        [Required(ErrorMessage = "Passwords doesnt match")]
-        [Compare("password")]
-        public string confirmpassword { get; set; }
-
         public int user_id { get; set; }
+        public int is_admin { get; set; }
     }
 }
