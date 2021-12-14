@@ -11,13 +11,31 @@ namespace SoftwareDevelopmentProject.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
+
     public partial class Sport
     {
+
         public int sport_id { get; set; }
+         
+        [DisplayName("Name of Sport")]
+        [Required(ErrorMessage = "Sport name is required")]
         public string sport_name { get; set; }
+
+        [DisplayName("Description")]
+        [Required(ErrorMessage = "Sport description is required")]
         public string sport_description { get; set; }
+
+        [DisplayName("Price")]
+        [Required(ErrorMessage = "Price is required")]
         public int sport_rate { get; set; }
+
+        [DisplayName("Currency")]
+        [Required(ErrorMessage = "Please select currency")]
         public int currency_id { get; set; }
+        //public IEnumerable<SelectListItem> currency { get; set; }
+
     }
 }
