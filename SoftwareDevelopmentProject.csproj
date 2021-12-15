@@ -362,6 +362,10 @@
     <Content Include="Views\User\UserMenu.cshtml" />
     <Content Include="Views\Shared\UserMenu.cshtml" />
     <Content Include="Views\Shared\ViewReservations.cshtml" />
+    <Content Include="Views\Home\UserMenu.cshtml" />
+    <Content Include="Views\Shared\Reservations.cshtml" />
+    <Content Include="Views\User\UserMenuAdmin.cshtml" />
+    <Content Include="Views\Shared\UserMenuAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

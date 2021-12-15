@@ -7,7 +7,7 @@
 <div class="row">
     <div class="card text-dark bg-light mb-3">
         <div class="card-body">
-            <h1 class="card-title">Choose your Sport</h1>
+            <h1 class="fas card-title">Choose your Sport</h1>
         </div>
     </div>
     <div class="col-md-2">
@@ -18,16 +18,18 @@
             @foreach (var item in Model)
             {
                 <div class="col-sm-4" style="padding: 20px;">
-                    <div class="card text-center">
-                        <div class="card-body" style="">
+                    <div class="card">
+                        <div class="card-header">
                             <h3 class="card-title">@Html.DisplayFor(model => item.sport_name)</h3>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-subtitle mb-2 text-success">Price @Html.DisplayFor(model => item.sport_rate) @ViewBag.currencies[item.currency_id]</h4>
                             <p class="card-text">@Html.DisplayFor(model => item.sport_description)</p>
-
                             @Html.ActionLink(linkText: "BOOK SPORT", actionName: "BookingASport", controllerName: "Booking", routeValues: new { name = item.sport_name },
-                htmlAttributes: new { @class = "btn btn-primary" })
+                    htmlAttributes: new { @class = "btn btn-primary" })
                         </div>
                     </div>
-                </div>
+                </div>          
             }
         </div>
     </div>

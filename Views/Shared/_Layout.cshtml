@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sports Facility Booking System</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">BEST SPORTS</a>
+            <a class="navbar-brand" href="/">
+                <i class='fas fa-volleyball-ball' style='font-size:30px'>&nbsp;&nbsp;BEST SPORTS</i> 
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -20,11 +23,11 @@
                     <!--<li class="nav-item">@Html.ActionLink("Registration", "Registration", "User")</li>
     <li class="nav-item">@Html.ActionLink("Login", "Login", "User")</li>
     <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
-    <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>-->
                     <li><a href="/User/Registration" class="nav-link">Registration</a></li>
                     <li><a href="/User/Login" class="nav-link">Login</a></li>
                     <li><a href="/Home/Contact" class="nav-link">Contact</a></li>
                     <li><a href="/Home/About" class="nav-link">About</a></li>
+    <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>-->
                 </ul>
             </div>
         </div>
@@ -32,7 +35,7 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        
         <!--<footer class="footer">
         <div class="container">
             <span class="text-muted">&copy; @DateTime.Now.Year - BEST SPORTS <small>Play your favourite sports</small></span>

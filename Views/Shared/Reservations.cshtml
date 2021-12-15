@@ -1,0 +1,88 @@
+﻿@model IEnumerable<SoftwareDevelopmentProject.Models.reservation>
+
+@{
+    ViewBag.Title = "ViewReservations";
+}
+
+<div class="form-horizontal">
+    <div class="card text-dark bg-light mb-3">
+        <div class="card-body">
+            <h1 class="fas card-title">All Bookings</h1>
+        </div>
+    </div>
+    <div class="col-md-2">
+        @Html.Partial("UserMenuAdmin")
+    </div>
+    <div class="col-md-offset-1 col-md-8">
+
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th colspan="6" class="text-center" scope="col">
+                        <h3>ALL BOOKINGS</h3>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.reservation_id)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.sport_id)
+                    </th>
+
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.datetime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.no_of_people)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.totalBookingCost)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.is_payment_done)
+                    </th>
+                </tr>
+            </thead>
+            @if (Model.Count() == 0)
+            {
+                <tr>
+                    <td colspan="6" class="text-center">No Bookings made yet</td>
+                </tr>
+            }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.reservation_id)
+                    </td>
+                    <td>
+                        @ViewBag.sports[item.sport_id]
+                    </td>
+                    <td>
+                        @item.datetime.ToString("MMM dd, yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.no_of_people)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.totalBookingCost)
+                    </td>
+                    @if (item.is_payment_done.Trim().Equals(Convert.ToString("FALSE")))
+                    {
+                        <td class="text-danger">
+                            NOT PAID
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="text-success">PAID</td>
+                    }
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

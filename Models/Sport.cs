@@ -20,7 +20,7 @@ namespace SoftwareDevelopmentProject.Models
 
         public int sport_id { get; set; }
          
-        [DisplayName("Name of Sport")]
+        [DisplayName("Sport Name")]
         [Required(ErrorMessage = "Sport name is required")]
         public string sport_name { get; set; }
 

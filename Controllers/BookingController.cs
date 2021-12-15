@@ -32,6 +32,12 @@ namespace SoftwareDevelopmentProject.Controllers
 
                 ViewBag.sports = sports;
 
+                var user = new UserModel().users.Where(x => x.user_id == user_id).First();
+                if (user.is_admin == 1)
+                {
+                    return View("Reservations", new reservationModel().reservations.ToList());
+                }
+
                 return View("ViewReservations", new reservationModel().reservations.Where(x => x.user_id == user_id).ToList() );
             }
             return View("Login", new user());

@@ -173,6 +173,12 @@ namespace SoftwareDevelopmentProject.Controllers
             }
 
             ViewBag.user = cookieObj["id"];
+            Dictionary<int, string> currencies = new Dictionary<int, string>();
+            foreach (var item in new CurrencyModel().currencies.ToList())
+            {
+                currencies.Add(item.currency_id, item.currency_name);
+            }
+            ViewBag.currencies = currencies;
 
             using (SportModel sportModel = new SportModel())
             {
