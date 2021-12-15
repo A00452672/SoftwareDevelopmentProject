@@ -4,3 +4,10 @@ bin/SoftwareDevelopmentProject.dll
 bin/SoftwareDevelopmentProject.pdb
 obj/Debug/SoftwareDevelopmentProject.dll
 obj/Debug/SoftwareDevelopmentProject.pdb
+.vs/SoftwareDevelopmentProject/v16/.suo
+.vs/SoftwareDevelopmentProject/v16/.suo
+*.dll
+*.pdb
+*.cache
+*.dll
+*.pdb

@@ -359,6 +359,7 @@
     <Content Include="Views\Shared\PaymentSucess.cshtml" />
     <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
     <Content Include="Views\Shared\PaymentView.cshtml" />
+    <Content Include="Views\User\UserMenu.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

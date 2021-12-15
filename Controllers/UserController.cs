@@ -15,12 +15,50 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpGet]
         public ActionResult Registration(int id = 0)
         {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj != null && cookieObj["id"]!=null)
+            {
+                using (UserModel dbmodel = new UserModel())
+                {
+                    var user_id = Int32.Parse(cookieObj["id"]);
+                    var user = dbmodel.users.Where(x => x.user_id == user_id).First();
+                    if (user.is_admin==1)
+                    {
+                        return RedirectToAction("AddASportView", "User");
+                    }
+                    else
+                    {
+                        return RedirectToAction("ViewAllSports", "User");
+                    }
+                }
+                    
+            }
+
             user userModel = new user();
             return View(userModel);
         }
         [HttpPost]
         public ActionResult Registration(user userModel)
         {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj != null && cookieObj["id"] != null)
+            {
+                using (UserModel dbmodel = new UserModel())
+                {
+                    var user_id = Int32.Parse(cookieObj["id"]);
+                    var user = dbmodel.users.Where(x => x.user_id == user_id).First();
+                    if (user.is_admin == 1)
+                    {
+                        return RedirectToAction("AddASportView", "User");
+                    }
+                    else
+                    {
+                        return RedirectToAction("ViewAllSports", "User");
+                    }
+                }
+
+            }
+
             using (UserModel dbmodel = new UserModel())
             {
                 if(dbmodel.users.Any(x => x.email == userModel.email))
@@ -35,7 +73,7 @@ namespace SoftwareDevelopmentProject.Controllers
             ModelState.Clear();
             ViewBag.SuccessMessage = "Registration Success";
 
-            return View("Registration", new user());
+            return RedirectToAction("Login", "User");
         }
 
         [HttpGet]
@@ -52,6 +90,13 @@ namespace SoftwareDevelopmentProject.Controllers
             {
                 foreach(var item in (dbmodel.users.Where(x => x.email == userModel.email && x.password == userModel.password)))
                 {
+                    HttpCookie cookie = new HttpCookie("SportUser");
+                    cookie["id"] = item.user_id.ToString();
+                    // This cookie will remain  for one month.
+                    cookie.Expires = DateTime.Now.AddMonths(1);
+                    //ViewBag.user = "11";
+                    // Add it to the current web response.
+                    Response.Cookies.Add(cookie);
                     if (item.is_admin == 1)
                     {
                         return RedirectToAction("AddASportView", "User");
@@ -70,6 +115,13 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpGet]
         public ActionResult ViewAllSports()
         {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            ViewBag.user = cookieObj["id"];
+
             using (SportModel sportModel = new SportModel())
             {
                 return View(sportModel.Sports.ToList());
@@ -92,6 +144,9 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpPost]
         public ActionResult AddASportView(Sport sport)
         {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            ViewBag.user = cookieObj["id"];
+
             sport.sport_id = 1;
             using (SportModel sportmodel = new SportModel())
             {
