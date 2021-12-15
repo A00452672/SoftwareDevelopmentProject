@@ -12,7 +12,7 @@
           <Property Name="payment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reservation_id" Type="int" Nullable="false" />
           <Property Name="cardType" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CardNumber" Type="int" Nullable="false" />
+          <Property Name="CardNumber" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="ExpiryDate" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="cvv" Type="int" Nullable="false" />
           <Property Name="nameOnTheCard" Type="varchar" MaxLength="50" Nullable="false" />
@@ -33,13 +33,13 @@
           <Property Name="payment_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="reservation_id" Type="Int32" Nullable="false" />
           <Property Name="cardType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CardNumber" Type="Int32" Nullable="false" />
+          <Property Name="CardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="ExpiryDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cvv" Type="Int32" Nullable="false" />
           <Property Name="nameOnTheCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="totalamount" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="CustomerPaymentModel1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CustomerPaymentModel" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CustomerPayments" EntityType="Self.CustomerPayment" />
         </EntityContainer>
       </Schema>
@@ -47,7 +47,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CustomerPaymentStoreContainer" CdmEntityContainer="CustomerPaymentModel1">
+        <EntityContainerMapping StorageEntityContainer="CustomerPaymentStoreContainer" CdmEntityContainer="CustomerPaymentModel">
           <EntitySetMapping Name="CustomerPayments">
             <EntityTypeMapping TypeName="CustomerPayment.CustomerPayment">
               <MappingFragment StoreEntitySet="CustomerPayment">

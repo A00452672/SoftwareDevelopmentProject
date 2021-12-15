@@ -17,6 +17,42 @@ namespace SoftwareDevelopmentProject.Controllers
             return View("PaymentView");
         }
 
+        public ActionResult ViewReservations()
+        {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj != null && cookieObj["id"] != null)
+            {
+                var user_id = Int32.Parse(cookieObj["id"]);
+                Dictionary<int, string> sports = new Dictionary<int, string>();
+                
+                foreach(var item in new SportModel().Sports.ToList())
+                {
+                    sports.Add(item.sport_id, item.sport_name);
+                }
+
+                ViewBag.sports = sports;
+
+                return View("ViewReservations", new reservationModel().reservations.Where(x => x.user_id == user_id).ToList() );
+            }
+            return View("Login", new user());
+        }
+
+        [HttpPost]
+        public ActionResult PayReservation(FormCollection form)
+        {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj != null && cookieObj["id"] != null)
+            {
+                ViewBag.reservationId = form["reservation_id"];
+                int resId = Int32.Parse(form["reservation_id"]);
+                var res = new reservationModel().reservations.Where(x => x.reservation_id == resId).First();
+                ViewBag.totalAmount = res.totalBookingCost;
+
+                return View("PaymentView");
+            }
+            return View("Login", new user());
+        }
+
         [HttpPost]
         public ActionResult PayNow(FormCollection form)
         {
@@ -29,7 +65,7 @@ namespace SoftwareDevelopmentProject.Controllers
                     reservation.user_id = Int32.Parse(cookieObj["id"]);
                     reservation.sport_id = Int32.Parse(form["sportId"]);
                     reservation.datetime = DateTime.Parse(form["datetime"]);
-                    reservation.no_of_people = 1;
+                    reservation.no_of_people = Int32.Parse(form["no_of_people"]);
                     reservation.is_payment_done = "FALSE";
                     reservation.totalBookingCost = reservation.no_of_people * Int32.Parse(form["sportAmount"]);
 
@@ -74,62 +110,78 @@ namespace SoftwareDevelopmentProject.Controllers
 
         public ActionResult ValidationForPay(Models.CustomerPayment cp)
         {
-            Regex mc = new Regex(@"^5[1-5][0-9]{14}|^(222[1-9]|22[3-9]\\d|2[3-6]\\d{2}|27[0-1]\\d|2720)[0-9]{12}$");
-            Regex v = new Regex(@"^4[0-9]{12}(?:[0-9]{3})?$");
-            Regex aex = new Regex(@"^3[47][0-9]{13}$");
             Boolean invalid = false;
             string invalidMessage = "";
-
-                if (cp.cardType == "American Express" && cp.CardNumber.ToString().Length != 15)
-                {
-                invalid = false;
-                invalidMessage = "Enter 15 digits as you have chosen American Express";
-                }
-                else if (!invalid && cp.cardType != "American Express" && cp.CardNumber.ToString().Length != 16)
-                {
-                invalid = false;
-                invalidMessage = "Enter 16 digits as you have choosed Visa or Mastercard";
-                }
-
-                if ((!invalid && cp.cardType == "MasterCard" && !mc.IsMatch(cp.CardNumber.ToString())) || (cp.cardType == "Visa" && !v.IsMatch(cp.CardNumber.ToString())) || (cp.cardType == "American Express" && !aex.IsMatch(cp.CardNumber.ToString())))
-                {
-                invalid = false;
-                invalidMessage = "Incorrect card number and type";
+            
+            if( cp.cardType != "Master Card" && cp.cardType != "Visa" && cp.cardType != "American Express")
+            {
+                invalid = true;
+                invalidMessage = "Please select valid card type";
             }
-
+            else if (cp.cardType == "Master Card")
+            {
+                Regex masterCard = new Regex(@"^5[1-5][0-9]{14}$");
+                if (!masterCard.IsMatch(cp.CardNumber))
+                {
+                    invalid = true;
+                    invalidMessage = "Invalid Master Card";
+                }
+            }
+            else if (cp.cardType == "Visa")
+            {
+                Regex visaCard = new Regex(@"^4[0-9]{15}$");
+                if (!visaCard.IsMatch(cp.CardNumber))
+                {
+                    invalid = true;
+                    invalidMessage = "Invalid VISA Card";
+                }
+            }
+            else if (cp.cardType == "American Express")
+            {
+                Regex expressCard = new Regex(@"^3[4|7][0-9]{13}$");
+                if (!expressCard.IsMatch(cp.CardNumber))
+                {
+                    invalid = true;
+                    invalidMessage = "Invalid American Express Card";
+                }
+            }
 
             if (invalid)
             {
                 ViewBag.ErrorMessage = invalidMessage;
+                ViewBag.totalAmount = cp.totalamount;
                 return View("PaymentView");
             }
 
-            using (CustomerPaymentModel1 model = new CustomerPaymentModel1())
+            
+            try
             {
-                try
+                using (CustomerPaymentModel model = new CustomerPaymentModel())
                 {
-                    cp.CardNumber = Int32.Parse(cp.cardType);
                     model.CustomerPayments.Add(cp);
-                    //model.SaveChanges();
+                    model.SaveChanges();
 
-                    using (reservationModel resModel = new reservationModel())
-                    {
-                        foreach (var item in resModel.reservations.Where(x => x.reservation_id == cp.reservation_id))
-                        {
-                            item.is_payment_done = "TRUE";
-                            resModel.reservations.Add(item);
-                            //resModel.SaveChanges();
-                        }
-                    }
-                    ViewBag.SuccessMessage = "Payment Successful";
-                    ModelState.Clear();
-                    return View("PaymentSucess");
                 }
-                catch (Exception e)
+                ModelState.Clear();
+
+                using (reservationModel resModel = new reservationModel())
                 {
-                    ViewBag.ErrorMessage = "Payment Failed";
-                    return View("PaymentView");
+                    var item = resModel.reservations.Where(x => x.reservation_id == cp.reservation_id).First();
+                    
+                    item.is_payment_done = "TRUE";
+                    resModel.reservations.Add(item);
+                    resModel.SaveChanges();
+                    
                 }
+                ViewBag.SuccessMessage = "Payment Successful";
+                ModelState.Clear();
+                return View("PaymentSucess");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                ViewBag.ErrorMessage = "Payment Failed";
+                return View("PaymentView");
             }
         }
 

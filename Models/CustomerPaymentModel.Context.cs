@@ -13,10 +13,10 @@ namespace SoftwareDevelopmentProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CustomerPaymentModel1 : DbContext
+    public partial class CustomerPaymentModel : DbContext
     {
-        public CustomerPaymentModel1()
-            : base("name=CustomerPaymentModel1")
+        public CustomerPaymentModel()
+            : base("name=CustomerPaymentModel")
         {
         }
     

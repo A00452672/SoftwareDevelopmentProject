@@ -25,7 +25,7 @@
             @Html.LabelFor(model => model.cardType, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-8">
                 <select asp-for="cardType" class="form-control" id="cardType" name="cardType">
-                    <option value="MasterCard" selected>Master Card</option>
+                    <option value="Master Card" selected>Master Card</option>
                     <option value="Visa" >Visa</option>
                     <option value="American Express">American Express</option>
                 </select>
@@ -37,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CardNumber, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-8">
-                @Html.EditorFor(model => model.CardNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Card Number", type="text" } })
+                @Html.EditorFor(model => model.CardNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Card Number", onkeyup = "this.value=this.value.replace(/[^\\d]/,'')", onkeydown = "this.value=this.value.replace(/[^\\d]/,'')", maxlength ="16" } })
                 @Html.ValidationMessageFor(model => model.CardNumber, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -69,7 +69,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.totalamount, htmlAttributes: new { @class = "control-label col-md-4" })
             <div class="col-md-8">
-                @Html.EditorFor(model => model.totalamount, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.totalAmount} })
+                @Html.EditorFor(model => model.totalamount, new { htmlAttributes = new { @class = "form-control", @Value = @ViewBag.totalAmount, @readonly="readonly"} })
                 @Html.ValidationMessageFor(model => model.totalamount, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -83,10 +83,12 @@
         <div class="form-group">
             <div class="col-md-offset-4 col-md-8">
                 <input type="submit" value="Pay Now" class="btn btn-default btn-success" />
+                <a href="/Booking/ViewReservations" class="btn btn-secondary">Pay Later</a>
             </div>
         </div>
     </div>
 </div>
+
     }
 
     @section Scripts {

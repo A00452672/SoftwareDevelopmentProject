@@ -23,10 +23,13 @@ namespace SoftwareDevelopmentProject.Models
         public int sport_id { get; set; }
         [DisplayName("BOOKING DATE")]
         public System.DateTime datetime { get; set; }
+
+        [DisplayName("NO OF PEOPLE")]
         public int no_of_people { get; set; }
+        [DisplayName("PAYMENT STATUS")]
         public string is_payment_done { get; set; }
 
-        [DisplayName("AMOUNT TO PAY")]
+        [DisplayName("TOTAL AMOUNT")]
         public int totalBookingCost { get; set; }
     }
 }

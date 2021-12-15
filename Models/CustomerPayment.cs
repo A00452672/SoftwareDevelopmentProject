@@ -18,7 +18,7 @@ namespace SoftwareDevelopmentProject.Models
 
         [Required(ErrorMessage = "Please Enter Credit Card Number")]
         [Display(Name = "Credit Card Number")]
-        public int CardNumber { get; set; }
+        public string CardNumber { get; set; }
 
 
         [Display(Name = "Valid Until")]

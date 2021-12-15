@@ -361,6 +361,7 @@
     <Content Include="Views\Shared\PaymentView.cshtml" />
     <Content Include="Views\User\UserMenu.cshtml" />
     <Content Include="Views\Shared\UserMenu.cshtml" />
+    <Content Include="Views\Shared\ViewReservations.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

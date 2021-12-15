@@ -7,7 +7,7 @@
     <Property Name="payment_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="reservation_id" Type="int" Nullable="false" />
     <Property Name="cardType" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="CardNumber" Type="int" Nullable="false" />
+    <Property Name="CardNumber" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="ExpiryDate" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="cvv" Type="int" Nullable="false" />
     <Property Name="nameOnTheCard" Type="varchar" MaxLength="50" Nullable="false" />
