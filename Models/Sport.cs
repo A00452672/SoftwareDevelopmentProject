@@ -28,8 +28,8 @@ namespace SoftwareDevelopmentProject.Models
         [Required(ErrorMessage = "Sport description is required")]
         public string sport_description { get; set; }
 
-        [DisplayName("Price")]
-        [Required(ErrorMessage = "Price is required")]
+        [DisplayName("Cost Per Person")]
+        [Required(ErrorMessage = "Cost Per Person is required")]
         public int sport_rate { get; set; }
 
         [DisplayName("Currency")]

@@ -210,6 +210,12 @@ namespace SoftwareDevelopmentProject.Controllers
                 ViewBag.SuccessMessage = successMessage;
             errorMessage = null;
             successMessage = null;
+            Dictionary<int, string> currencies = new Dictionary<int, string>();
+            foreach (var item in new CurrencyModel().currencies.ToList())
+            {
+                currencies.Add(item.currency_id, item.currency_name);
+            }
+            ViewBag.currencies = currencies;
             return View("AddASportView", new Sport());
         }
 
