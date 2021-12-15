@@ -79,6 +79,25 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpGet]
         public ActionResult Login(int id = 0)
         {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj != null && cookieObj["id"] != null)
+            {
+                using (UserModel dbmodel = new UserModel())
+                {
+                    var user_id = Int32.Parse(cookieObj["id"]);
+                    var user = dbmodel.users.Where(x => x.user_id == user_id).First();
+                    if (user.is_admin == 1)
+                    {
+                        return RedirectToAction("AddASportView", "User");
+                    }
+                    else
+                    {
+                        return RedirectToAction("ViewAllSports", "User");
+                    }
+                }
+
+            }
+
             user userModel = new user();
             return View(userModel);
         }
@@ -86,6 +105,25 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpPost]
         public ActionResult Login(user userModel)
         {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj != null && cookieObj["id"] != null)
+            {
+                using (UserModel dbmodel = new UserModel())
+                {
+                    var user_id = Int32.Parse(cookieObj["id"]);
+                    var user = dbmodel.users.Where(x => x.user_id == user_id).First();
+                    if (user.is_admin == 1)
+                    {
+                        return RedirectToAction("AddASportView", "User");
+                    }
+                    else
+                    {
+                        return RedirectToAction("ViewAllSports", "User");
+                    }
+                }
+
+            }
+
             using (UserModel dbmodel = new UserModel())
             {
                 foreach(var item in (dbmodel.users.Where(x => x.email == userModel.email && x.password == userModel.password)))
@@ -116,10 +154,11 @@ namespace SoftwareDevelopmentProject.Controllers
         public ActionResult ViewAllSports()
         {
             HttpCookie cookieObj = Request.Cookies["SportUser"];
-            if (cookieObj == null)
+            if (cookieObj == null || cookieObj["id"] == null)
             {
                 return RedirectToAction("Login", "User");
             }
+
             ViewBag.user = cookieObj["id"];
 
             using (SportModel sportModel = new SportModel())
@@ -132,6 +171,26 @@ namespace SoftwareDevelopmentProject.Controllers
         [HttpGet]
         public ActionResult AddASportView()
         {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj == null || cookieObj["id"] == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            else
+            {
+                using (UserModel dbmodel = new UserModel())
+                {
+                    var user_id = Int32.Parse(cookieObj["id"]);
+                    var user = dbmodel.users.Where(x => x.user_id == user_id).First();
+                    if (user.is_admin == 0)
+                    {
+                        return RedirectToAction("ViewAllSports", "User");
+                    }
+                }
+            }
+
+            ViewBag.user = cookieObj["id"];
+
             if (errorMessage != null)
                 ViewBag.duplicateMessage = errorMessage;
             if (successMessage != null)
@@ -145,6 +204,23 @@ namespace SoftwareDevelopmentProject.Controllers
         public ActionResult AddASportView(Sport sport)
         {
             HttpCookie cookieObj = Request.Cookies["SportUser"];
+            if (cookieObj == null || cookieObj["id"] == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            else
+            {
+                using (UserModel dbmodel = new UserModel())
+                {
+                    var user_id = Int32.Parse(cookieObj["id"]);
+                    var user = dbmodel.users.Where(x => x.user_id == user_id).First();
+                    if (user.is_admin == 0)
+                    {
+                        return RedirectToAction("ViewAllSports", "User");
+                    }
+                }
+            }
+
             ViewBag.user = cookieObj["id"];
 
             sport.sport_id = 1;

@@ -14,15 +14,13 @@
         @Html.Partial("UserMenu")
     </div>
     <div class="col-md-10">
-        <br />
-        <h1>Your id is @ViewBag.user</h1>
         <div class="row">
             @foreach (var item in Model)
             {
                 <div class="col-sm-4" style="padding: 20px;">
                     <div class="card text-center">
                         <div class="card-body" style="">
-                            <h5 class="card-title">@Html.DisplayFor(model => item.sport_name)</h5>
+                            <h3 class="card-title">@Html.DisplayFor(model => item.sport_name)</h3>
                             <p class="card-text">@Html.DisplayFor(model => item.sport_description)</p>
 
                             @Html.ActionLink(linkText: "BOOK SPORT", actionName: "BookingASport", controllerName: "Booking", routeValues: new { id = item.sport_id },
