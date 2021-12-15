@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using SoftwareDevelopmentProject.Models;
+using System.Text.RegularExpressions;
 
 namespace SoftwareDevelopmentProject.Controllers
 {
@@ -61,7 +62,18 @@ namespace SoftwareDevelopmentProject.Controllers
 
             using (UserModel dbmodel = new UserModel())
             {
-                if(dbmodel.users.Any(x => x.email == userModel.email))
+                if (userModel.country.Equals("CANADA") && !Regex.IsMatch(userModel.zip_code, @"^([a-zA-Z][0-9]){3}$"))
+                {
+                    ViewBag.zip_error = "Invalid Zip Code for Canada";
+                    return View("Registration", userModel);
+                }
+                if (userModel.country.Equals("USA") && !Regex.IsMatch(userModel.zip_code, @"^\d{5}(-\d{4})?$"))
+                {
+                    ViewBag.zip_error = "Invalid Zip Code for USA";
+                    return View("Registration", userModel);
+                }
+
+                if (dbmodel.users.Any(x => x.email == userModel.email))
                 {
                     ViewBag.duplicateMessage = "Email already used!!!";
                     return View("Registration", userModel);

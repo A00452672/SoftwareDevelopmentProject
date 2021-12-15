@@ -298,13 +298,6 @@
     <Content Include="Models\reservationModel.edmx.diagram">
       <DependentUpon>reservationModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\UserModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\UserModel.edmx.diagram">
-      <DependentUpon>UserModel.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\SportModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SportModel.Designer.cs</LastGenOutput>
@@ -325,6 +318,13 @@
     </EntityDeploy>
     <Content Include="Models\CustomerPaymentModel.edmx.diagram">
       <DependentUpon>CustomerPaymentModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\UserModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserModel.edmx.diagram">
+      <DependentUpon>UserModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

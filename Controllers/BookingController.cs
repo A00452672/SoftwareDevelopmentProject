@@ -61,6 +61,7 @@ namespace SoftwareDevelopmentProject.Controllers
             {
                 try
                 {
+                    
                     reservation reservation = new reservation();
                     reservation.user_id = Int32.Parse(cookieObj["id"]);
                     reservation.sport_id = Int32.Parse(form["sportId"]);
@@ -169,7 +170,6 @@ namespace SoftwareDevelopmentProject.Controllers
                     var item = resModel.reservations.Where(x => x.reservation_id == cp.reservation_id).First();
                     
                     item.is_payment_done = "TRUE";
-                    resModel.reservations.Add(item);
                     resModel.SaveChanges();
                     
                 }

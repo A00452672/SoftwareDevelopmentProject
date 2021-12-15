@@ -16,7 +16,7 @@ namespace SoftwareDevelopmentProject.Models
     public partial class UserModel : DbContext
     {
         public UserModel()
-            : base("name=AzureConn")
+            : base("name=UserModel")
         {
         }
     
