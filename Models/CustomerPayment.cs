@@ -11,6 +11,8 @@ namespace SoftwareDevelopmentProject.Models
     {
         public int payment_Id { get; set; }
 
+        public int reservation_id { get; set; }
+
 
         [Display(Name = "Choose Card Type")]
         public string cardType { get; set; }
@@ -37,8 +39,6 @@ namespace SoftwareDevelopmentProject.Models
         [Required(ErrorMessage = "Please Enter the Name As in the card")]
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Name Should Contain Only Alphabets or Spaces")]
         public string nameOnTheCard { get; set; }
-
-
         public int totalamount { get; set; }
     }
 }

@@ -12,7 +12,6 @@
           <Property Name="reservation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="user_id" Type="int" Nullable="false" />
           <Property Name="sport_id" Type="int" Nullable="false" />
-          <Property Name="payment_id" Type="int" Nullable="false" />
           <Property Name="datetime" Type="datetime" Nullable="false" />
           <Property Name="no_of_people" Type="int" Nullable="false" />
           <Property Name="is_payment_done" Type="char" MaxLength="10" Nullable="false" />
@@ -33,13 +32,12 @@
           <Property Name="reservation_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="user_id" Type="Int32" Nullable="false" />
           <Property Name="sport_id" Type="Int32" Nullable="false" />
-          <Property Name="payment_id" Type="Int32" Nullable="false" />
           <Property Name="datetime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="no_of_people" Type="Int32" Nullable="false" />
           <Property Name="is_payment_done" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="totalBookingCost" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="DatabaseEntities5" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="k_singhEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="reservations" EntityType="Self.reservation" />
         </EntityContainer>
       </Schema>
@@ -47,14 +45,13 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="reservationModelStoreContainer" CdmEntityContainer="DatabaseEntities5">
+        <EntityContainerMapping StorageEntityContainer="reservationModelStoreContainer" CdmEntityContainer="k_singhEntities1">
           <EntitySetMapping Name="reservations">
             <EntityTypeMapping TypeName="reservationModel.reservation">
               <MappingFragment StoreEntitySet="reservation">
                 <ScalarProperty Name="reservation_id" ColumnName="reservation_id" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="sport_id" ColumnName="sport_id" />
-                <ScalarProperty Name="payment_id" ColumnName="payment_id" />
                 <ScalarProperty Name="datetime" ColumnName="datetime" />
                 <ScalarProperty Name="no_of_people" ColumnName="no_of_people" />
                 <ScalarProperty Name="is_payment_done" ColumnName="is_payment_done" />

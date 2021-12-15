@@ -23,8 +23,8 @@
                             <h3 class="card-title">@Html.DisplayFor(model => item.sport_name)</h3>
                             <p class="card-text">@Html.DisplayFor(model => item.sport_description)</p>
 
-                            @Html.ActionLink(linkText: "BOOK SPORT", actionName: "BookingASport", controllerName: "Booking", routeValues: new { id = item.sport_id },
-        htmlAttributes: new { @class = "btn btn-primary" })
+                            @Html.ActionLink(linkText: "BOOK SPORT", actionName: "BookingASport", controllerName: "Booking", routeValues: new { name = item.sport_name },
+                htmlAttributes: new { @class = "btn btn-primary" })
                         </div>
                     </div>
                 </div>

@@ -4,7 +4,7 @@
     ViewBag.Title = "ReservationView";
 }
 
-<h2>ReservationView</h2>
+<h2>Book The sport</h2>
 
 
 @using (Html.BeginForm("PaymentView", "Booking", FormMethod.Post))
@@ -30,50 +30,42 @@
                 @Html.ValidationMessageFor(model => model.sport_id, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.payment_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2 text-right"><label for="sportName" class="form-label">SPORT NAME</label></div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.payment_id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.payment_id, "", new { @class = "text-danger" })
+                <input type="text" id="sportName" name="sportName" class="form-control" value=@ViewBag.sportName disabled readonly>
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.datetime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.datetime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.datetime, new
+                {
+                    htmlAttributes = new
+                    {
+                        @class = "form-control",
+                        type = "date",
+                        min = @DateTime.Now.ToString("yyyy-MM-dd"),
+                        max = @DateTime.Now.AddDays(90).ToString("yyyy-MM-dd")
+
+                    }
+                 })
                 @Html.ValidationMessageFor(model => model.datetime, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.no_of_people, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.no_of_people, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.no_of_people, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.is_payment_done, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-2 text-right"><label for="sportName" class="form-label">TOTAL COST</label></div>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.is_payment_done, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.is_payment_done, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.totalBookingCost, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.totalBookingCost, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.totalBookingCost, "", new { @class = "text-danger" })
+                <input type="text" id="sportName" name="sportName" class="form-control" value=@ViewBag.SportAmount disabled readonly>
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Book Sport" class="btn btn-default" />
             </div>
         </div>
     </div>

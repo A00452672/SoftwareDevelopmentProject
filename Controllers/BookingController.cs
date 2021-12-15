@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftwareDevelopmentProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -10,15 +11,28 @@ namespace SoftwareDevelopmentProject.Controllers
     public class BookingController : Controller
     {
         [HttpPost]
-        public ActionResult PaymentView(int id)
+        public ActionResult PaymentView()
         {
-            ViewBag.id = id;
+           // ViewBag.id = id;
             return View("PaymentView");
         }
-        public ActionResult BookingASport(int id)
+        public ActionResult BookingASport(string name)
         {
-            ViewBag.id = id;
-            return View("PaymentView");
+            ViewBag.sportName = name;
+              using (SportModel sportmodel = new SportModel())
+              { 
+                  var sports = sportmodel.Sports.ToList();
+                  foreach (var item in sports)
+                  {
+                      if (item.sport_name == name)
+                      {
+                        ViewBag.SportAmount = item.sport_rate;
+                      }
+                  }
+                     // return View("ReservationView");
+               } 
+
+            return View("ReservationView");
         }
 
         public ActionResult ValidationForPay(Models.CustomerPayment cp)

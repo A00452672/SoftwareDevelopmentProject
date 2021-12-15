@@ -11,16 +11,22 @@ namespace SoftwareDevelopmentProject.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel;
     
     public partial class reservation
     {
         public int reservation_id { get; set; }
+        [DisplayName("USER ID")]
         public int user_id { get; set; }
+        [DisplayName("SPORT NAME")]
         public int sport_id { get; set; }
-        public int payment_id { get; set; }
+        [DisplayName("BOOKING DATE")]
         public System.DateTime datetime { get; set; }
         public int no_of_people { get; set; }
         public string is_payment_done { get; set; }
+
+        [DisplayName("AMOUNT TO PAY")]
         public int totalBookingCost { get; set; }
     }
 }
