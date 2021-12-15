@@ -18,8 +18,14 @@
         <table class="table">
             <tr>
                 <th>
+                    @Html.DisplayNameFor(model => model.reservation_id)
+                </th>
+
+                <th>
                     @Html.DisplayNameFor(model => model.sport_id)
                 </th>
+
+
                 <th>
                     @Html.DisplayNameFor(model => model.datetime)
                 </th>
@@ -36,34 +42,37 @@
 
             @foreach (var item in Model)
             {
-        <tr>
-            <td>
-                @ViewBag.sports[item.sport_id]
-            </td>
-            <td>
-                @item.datetime.ToString("MMM dd, yyyy")
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.no_of_people)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.totalBookingCost)
-            </td>
-            @if (item.is_payment_done.Trim().Equals(Convert.ToString("FALSE")))
-            {
-            <td>
-                @using (Html.BeginForm("PayReservation", "Booking", FormMethod.Post))
-                {
-                    <input type="hidden" name="reservation_id" value=@item.reservation_id />
-                    <button type="submit" class="btn btn-success btn-block">Pay Now</button>
-                }
-            </td>
-            }
-            else
-            {
-                <td><a class="btn btn-secondary btn-block disabled">PAID</a></td>
-            }
-        </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.reservation_id)
+                    </td>
+                    <td>
+                        @ViewBag.sports[item.sport_id]
+                    </td>
+                    <td>
+                        @item.datetime.ToString("MMM dd, yyyy")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.no_of_people)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.totalBookingCost)
+                    </td>
+                    @if (item.is_payment_done.Trim().Equals(Convert.ToString("FALSE")))
+                    {
+                        <td>
+                            @using (Html.BeginForm("PayReservation", "Booking", FormMethod.Post))
+                            {
+                                <input type="hidden" name="reservation_id" value=@item.reservation_id />
+                                <button type="submit" class="btn btn-success btn-block">PAY NOW</button>
+                            }
+                        </td>
+                    }
+                    else
+                    {
+                        <td><a class="btn btn-secondary btn-block disabled">PAID</a></td>
+                    }
+                </tr>
             }
 
         </table>

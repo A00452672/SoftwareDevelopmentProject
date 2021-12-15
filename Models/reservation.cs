@@ -16,6 +16,7 @@ namespace SoftwareDevelopmentProject.Models
     
     public partial class reservation
     {
+        [DisplayName("BOOKING ID")]
         public int reservation_id { get; set; }
         [DisplayName("USER ID")]
         public int user_id { get; set; }
