@@ -10,17 +10,15 @@ namespace SoftwareDevelopmentProject.Models
     public partial class CustomerPayment
     {
         public int payment_Id { get; set; }
-
         public int reservation_id { get; set; }
 
-
-        [Display(Name = "Choose Card Type")]
+        [Display(Name = "Card Type")]
         public string cardType { get; set; }
 
 
         [Required(ErrorMessage = "Please Enter Credit Card Number")]
         [Display(Name = "Credit Card Number")]
-        public long CardNumber { get; set; }
+        public int CardNumber { get; set; }
 
 
         [Display(Name = "Valid Until")]
@@ -34,11 +32,11 @@ namespace SoftwareDevelopmentProject.Models
         [RegularExpression(@"^[\d]{3,3}$", ErrorMessage = "Please Enter Valid CVV")]
         public int cvv { get; set; }
 
-
         [Display(Name = "Card Holder Name")]
         [Required(ErrorMessage = "Please Enter the Name As in the card")]
         [RegularExpression(@"^[a-zA-Z ]+$", ErrorMessage = "Name Should Contain Only Alphabets or Spaces")]
         public string nameOnTheCard { get; set; }
+        [Display(Name = "Total Amount")]
         public int totalamount { get; set; }
     }
 }

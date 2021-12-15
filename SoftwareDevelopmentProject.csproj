@@ -153,22 +153,22 @@
       <DependentUpon>CurrencyModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\CustomerPayment.cs">
-      <DependentUpon>CustomerPaymentModels.tt</DependentUpon>
+      <DependentUpon>CustomerPaymentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerPaymentModels.Context.cs">
+    <Compile Include="Models\CustomerPaymentModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerPaymentModels.Context.tt</DependentUpon>
+      <DependentUpon>CustomerPaymentModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerPaymentModels.cs">
+    <Compile Include="Models\CustomerPaymentModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerPaymentModels.tt</DependentUpon>
+      <DependentUpon>CustomerPaymentModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\CustomerPaymentModels.Designer.cs">
+    <Compile Include="Models\CustomerPaymentModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerPaymentModels.edmx</DependentUpon>
+      <DependentUpon>CustomerPaymentModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\reservation.cs">
       <DependentUpon>reservationModel.tt</DependentUpon>
@@ -249,15 +249,15 @@
       <DependentUpon>CurrencyModel.edmx</DependentUpon>
       <LastGenOutput>CurrencyModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CustomerPaymentModels.Context.tt">
+    <Content Include="Models\CustomerPaymentModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomerPaymentModels.edmx</DependentUpon>
-      <LastGenOutput>CustomerPaymentModels.Context.cs</LastGenOutput>
+      <DependentUpon>CustomerPaymentModel.edmx</DependentUpon>
+      <LastGenOutput>CustomerPaymentModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\CustomerPaymentModels.tt">
+    <Content Include="Models\CustomerPaymentModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>CustomerPaymentModels.edmx</DependentUpon>
-      <LastGenOutput>CustomerPaymentModels.cs</LastGenOutput>
+      <DependentUpon>CustomerPaymentModel.edmx</DependentUpon>
+      <LastGenOutput>CustomerPaymentModel.cs</LastGenOutput>
     </Content>
     <Content Include="Models\reservationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -319,12 +319,12 @@
     <Content Include="Models\CurrencyModel.edmx.diagram">
       <DependentUpon>CurrencyModel.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\CustomerPaymentModels.edmx">
+    <EntityDeploy Include="Models\CustomerPaymentModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CustomerPaymentModels.Designer.cs</LastGenOutput>
+      <LastGenOutput>CustomerPaymentModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\CustomerPaymentModels.edmx.diagram">
-      <DependentUpon>CustomerPaymentModels.edmx</DependentUpon>
+    <Content Include="Models\CustomerPaymentModel.edmx.diagram">
+      <DependentUpon>CustomerPaymentModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -360,6 +360,7 @@
     <Content Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
     <Content Include="Views\Shared\PaymentView.cshtml" />
     <Content Include="Views\User\UserMenu.cshtml" />
+    <Content Include="Views\Shared\UserMenu.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

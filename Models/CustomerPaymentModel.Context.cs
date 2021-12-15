@@ -13,10 +13,10 @@ namespace SoftwareDevelopmentProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class k_singhEntities : DbContext
+    public partial class CustomerPaymentModel1 : DbContext
     {
-        public k_singhEntities()
-            : base("name=k_singhEntities")
+        public CustomerPaymentModel1()
+            : base("name=CustomerPaymentModel1")
         {
         }
     

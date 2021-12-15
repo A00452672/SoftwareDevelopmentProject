@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="CustomerPaymentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="CustomerPayment.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CustomerPayment">
           <Key>
             <PropertyRef Name="payment_Id" />
@@ -18,14 +18,14 @@
           <Property Name="nameOnTheCard" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="totalamount" Type="int" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="CustomerPaymentModelStoreContainer">
+        <EntityContainer Name="CustomerPaymentStoreContainer">
           <EntitySet Name="CustomerPayment" EntityType="Self.CustomerPayment" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="CustomerPaymentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="CustomerPayment" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="CustomerPayment">
           <Key>
             <PropertyRef Name="payment_Id" />
@@ -39,7 +39,7 @@
           <Property Name="nameOnTheCard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="totalamount" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="k_singhEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CustomerPaymentModel1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CustomerPayments" EntityType="Self.CustomerPayment" />
         </EntityContainer>
       </Schema>
@@ -47,9 +47,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CustomerPaymentModelStoreContainer" CdmEntityContainer="k_singhEntities">
+        <EntityContainerMapping StorageEntityContainer="CustomerPaymentStoreContainer" CdmEntityContainer="CustomerPaymentModel1">
           <EntitySetMapping Name="CustomerPayments">
-            <EntityTypeMapping TypeName="CustomerPaymentModel.CustomerPayment">
+            <EntityTypeMapping TypeName="CustomerPayment.CustomerPayment">
               <MappingFragment StoreEntitySet="CustomerPayment">
                 <ScalarProperty Name="payment_Id" ColumnName="payment_Id" />
                 <ScalarProperty Name="reservation_id" ColumnName="reservation_id" />

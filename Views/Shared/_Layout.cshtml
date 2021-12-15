@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">BEST SPORTS</a>
+            <a class="navbar-brand" href="/">BEST SPORTS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -33,8 +33,10 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - BEST SPORTS <small>Play your favourite sports</small></p>
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">&copy; @DateTime.Now.Year - BEST SPORTS <small>Play your favourite sports</small></span>
+            </div>
         </footer>
     </div>
 

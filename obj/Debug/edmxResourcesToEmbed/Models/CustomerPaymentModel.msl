@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CustomerPaymentStoreContainer" CdmEntityContainer="CustomerPaymentModel1">
+    <EntitySetMapping Name="CustomerPayments">
+      <EntityTypeMapping TypeName="CustomerPayment.CustomerPayment">
+        <MappingFragment StoreEntitySet="CustomerPayment">
+          <ScalarProperty Name="payment_Id" ColumnName="payment_Id" />
+          <ScalarProperty Name="reservation_id" ColumnName="reservation_id" />
+          <ScalarProperty Name="cardType" ColumnName="cardType" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="cvv" ColumnName="cvv" />
+          <ScalarProperty Name="nameOnTheCard" ColumnName="nameOnTheCard" />
+          <ScalarProperty Name="totalamount" ColumnName="totalamount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

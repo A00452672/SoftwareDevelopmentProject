@@ -16,3 +16,8 @@ obj/Debug/SoftwareDevelopmentProject.pdb
 *.pdb
 *.dll
 .vs/SoftwareDevelopmentProject/v16/.suo
+.vs/SoftwareDevelopmentProject/config/applicationhost.config
+.vs/SoftwareDevelopmentProject/v16/.suo
+*.testlog
+*.dll
+*.pdb

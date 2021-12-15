@@ -73,7 +73,8 @@ namespace SoftwareDevelopmentProject.Controllers
             ModelState.Clear();
             ViewBag.SuccessMessage = "Registration Success";
 
-            return RedirectToAction("Login", "User");
+            //return RedirectToAction("Login", "User");
+            return View("Registration", new user());
         }
 
         [HttpGet]

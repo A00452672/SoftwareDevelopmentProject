@@ -3,23 +3,27 @@
 @{
     ViewBag.Title = "ReservationView";
 }
-
-<h2>Book The sport</h2>
-
-
-@using (Html.BeginForm("PaymentView", "Booking", FormMethod.Post))
+@using (Html.BeginForm("PayNow", "Booking", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>reservation</h4>
-        <hr />
+<div class="form-horizontal">
+    <div class="card text-dark bg-light mb-3">
+        <div class="card-body">
+            <h1 class="card-title">Select Date </h1>
+        </div>
+    </div>
+    <div class="col-md-2">
+        @Html.Partial("UserMenu")
+    </div>
+    <div class="col-md-10">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
+
         <div class="form-group">
             <div class="col-md-2 text-right"><label for="sportName" class="form-label">SPORT NAME</label></div>
             <div class="col-md-10">
                 <input type="text" id="sportName" name="sportName" class="form-control" value=@ViewBag.sportName disabled readonly>
+                <input type="hidden" name="sportId" id="sportId" value=@ViewBag.sportId /> 
             </div>
         </div>
 
@@ -41,11 +45,13 @@
             </div>
         </div>
 
+
+
         <div class="form-group">
 
-            <div class="col-md-2 text-right"><label for="sportName" class="form-label">TOTAL COST</label></div>
+            <div class="col-md-2 text-right"><label for="sportAmount" class="form-label">TOTAL COST</label></div>
             <div class="col-md-10">
-                <input type="text" id="sportName" name="sportName" class="form-control" value=@ViewBag.SportAmount disabled readonly>
+                <input type="text" id="sportAmount" name="sportAmount" class="form-control" value=@ViewBag.SportAmount readonly>
             </div>
         </div>
 
@@ -54,7 +60,9 @@
                 <input type="submit" value="Book Sport" class="btn btn-default" />
             </div>
         </div>
+
     </div>
+</div>
 }
 
 
