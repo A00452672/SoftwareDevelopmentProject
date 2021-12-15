@@ -1,5 +1,4 @@
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\obj\Debug\SoftwareDevelopmentProject.csproj.CoreCompileInputs.cache
-C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\obj\Debug\SoftwareDevelopmentProject.csproj.AssemblyReference.cache
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\SoftwareDevelopmentProject.dll.config
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\SoftwareDevelopmentProject.dll
 C:\Users\WELCOME\source\repos\SoftwareDevelopmentProject\bin\SoftwareDevelopmentProject.pdb

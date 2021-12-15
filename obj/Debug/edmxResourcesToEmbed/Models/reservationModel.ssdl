@@ -7,7 +7,6 @@
     <Property Name="reservation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="user_id" Type="int" Nullable="false" />
     <Property Name="sport_id" Type="int" Nullable="false" />
-    <Property Name="payment_id" Type="int" Nullable="false" />
     <Property Name="datetime" Type="datetime" Nullable="false" />
     <Property Name="no_of_people" Type="int" Nullable="false" />
     <Property Name="is_payment_done" Type="char" MaxLength="10" Nullable="false" />
