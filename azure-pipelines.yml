@@ -28,7 +28,7 @@ steps:
   displayName: 'Install NetCore 5.x'
   inputs:
     packageType: 'sdk'
-    version: '5.x'
+    version: '4.7.2'
     includePreviewVersions: true
     
 - task: DotNetCoreCLI@2
