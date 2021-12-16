@@ -155,6 +155,7 @@ namespace SoftwareDevelopmentProject.Controllers
 
             if (invalid)
             {
+                ViewBag.reservationId = cp.reservation_id;
                 ViewBag.ErrorMessage = invalidMessage;
                 ViewBag.totalAmount = cp.totalamount;
                 return View("PaymentView");
@@ -186,6 +187,8 @@ namespace SoftwareDevelopmentProject.Controllers
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                ViewBag.reservationId = cp.reservation_id;
+                ViewBag.totalAmount = cp.totalamount;
                 ViewBag.ErrorMessage = "Payment Failed";
                 return View("PaymentView");
             }
