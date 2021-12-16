@@ -4,47 +4,66 @@
     ViewBag.Title = "Login Page";
 }
 
-<h2>Login Page</h2>
-
-
-@using (Html.BeginForm("Login", "User", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-
-<div class="form-horizontal">
-
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input type="text" class="form-control" id="email" name="email" />
+<div class="row">
+    <div class="card text-dark bg-light mb-3">
+        <div class="card-body text-center">
+            <h1 class="fas card-title">WELCOME TO BEST SPORTS</h1>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <input type="password" class="form-control" id="password" name="password" />
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Login" class="btn btn-default" />
-        </div>
-    </div>
-
-    <div class="col-md-offset-2 col-md-8">
-        <label class="label-danger">@ViewBag.InvalidCredentialsMessage</label>
-    </div>
-    <div class="col-md-offset-2 col-md-10">
-        <a href="/User/Registration">New User? Create Account!!!</a>
-    </div>
-    <br /><br />
 </div>
-}
+<br />
+<div class="row row-eq-height">
+    <div class="col-md-6">
+        <div class="card"><img src="/Content/images/sports.jpg" /></div>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+    @using (Html.BeginForm("Login", "User", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        <div class="card text-center bg-light">
+            <div class="card-header">
+                <h2>LOGIN</h2>
+            </div>
+            <div class="card-body">
+                <br /><br />
+                <div class="form-horizontal ">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" id="email" name="email" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-4" })
+                        <div class="col-md-8">
+                            <input type="password" class="form-control" id="password" name="password" />
+                        </div>
+                    </div>
+
+                    <div class="form-group text-left">
+                        <div class="col-md-offset-4 col-md-8">
+                            <input type="submit" value="Login" class="btn btn-default" />
+                        </div>
+                    </div>
+
+                    <p class="text-danger col-md-offset-4 col-md-8 text-left">
+                        @ViewBag.InvalidCredentialsMessage
+                    </p>
+                    <div class="col-md-offset-4 col-md-8 text-left">
+                        <a href="/User/Registration">New User? Create Account!!!</a>
+                    </div>
+                    <br /><br /><br /><br />
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+</div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
