@@ -1,11 +1,7 @@
 
-.vs/SoftwareDevelopmentProject/v16/.suo
-bin/SoftwareDevelopmentProject.dll
-bin/SoftwareDevelopmentProject.pdb
-obj/Debug/SoftwareDevelopmentProject.dll
-obj/Debug/SoftwareDevelopmentProject.pdb
-.vs/SoftwareDevelopmentProject/v16/.suo
-.vs/SoftwareDevelopmentProject/v16/.suo
+.vs
+bin
+obj
 *.dll
 *.pdb
 *.cache
@@ -15,14 +11,7 @@ obj/Debug/SoftwareDevelopmentProject.pdb
 *.pdb
 *.pdb
 *.dll
-.vs/SoftwareDevelopmentProject/v16/.suo
-.vs/SoftwareDevelopmentProject/config/applicationhost.config
-.vs/SoftwareDevelopmentProject/v16/.suo
 *.testlog
 *.dll
 *.pdb
 ~$Defects.xlsx
-.vs/SoftwareDevelopmentProject/v16/.suo
-.vs/SoftwareDevelopmentProject/v16/.suo
-.vs/SoftwareDevelopmentProject/v16/.suo
-bin/SoftwareDevelopmentProject.dll
