@@ -4,7 +4,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
 
 trigger:
-- main
+- master
   
 pool:
   vmImage: 'windows-latest'
@@ -21,6 +21,7 @@ steps:
   inputs:
     packageType: 'sdk'
     version: '5.x'
+    includePreviewVersions: true
     
 - task: DotNetCoreCLI@2
   displayName: 'Build Project'
