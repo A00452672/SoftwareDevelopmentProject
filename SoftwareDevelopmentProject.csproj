@@ -349,34 +349,6 @@
     <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.dll" />
     <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.Utility.dll" />
     <Content Include="packages\EntityFramework.6.1.3\tools\migrate.exe" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CurrencyModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CurrencyModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CurrencyModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModels.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModels.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModels.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\PaymentModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\PaymentModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\PaymentModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\reservationModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\reservationModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\reservationModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\SportModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\SportModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\SportModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\UserModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\UserModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\UserModel.ssdl" />
-    <Content Include="obj\Debug\SoftwareDevelopmentProject.csproj.AssemblyReference.cache" />
-    <Content Include="obj\Debug\SoftwareDevelopmentProject.csproj.CopyComplete" />
-    <Content Include="obj\Debug\SoftwareDevelopmentProject.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Release\SoftwareDevelopmentProject.csproj.AssemblyReference.cache" />
-    <Content Include="obj\Release\SoftwareDevelopmentProject.csproj.CoreCompileInputs.cache" />
     <Content Include="azure-pipelines.yml" />
     <Content Include="Defects.xlsx" />
     <Content Include=".vs\SoftwareDevelopmentProject\config\applicationhost.config" />
@@ -670,24 +642,6 @@
     <Content Include="Views\User\UserMenuAdmin.cshtml" />
     <Content Include="Views\Shared\UserMenuAdmin.cshtml" />
     <Content Include="Views\Home\FaqView.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\roslyn\" />
-    <Folder Include="obj\Release\CSAutoParameterize\original\Views\" />
-    <Folder Include="obj\Release\CSAutoParameterize\transformed\Views\" />
-    <Folder Include="obj\Release\edmxResourcesToEmbed\Models\" />
-    <Folder Include="obj\Release\Package\PackageTmp\App_Data\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Content\" />
-    <Folder Include="obj\Release\Package\PackageTmp\fonts\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Models\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Scripts\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Views\Home\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Views\Shared\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Views\User\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\Views\" />
-    <Folder Include="obj\Release\TransformWebConfig\assist\" />
-    <Folder Include="obj\Release\TransformWebConfig\original\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
