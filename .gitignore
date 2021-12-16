@@ -1,5 +1,8 @@
 <<<<<<< Updated upstream
 
+bin
+obj
+.vs
 .vs/SoftwareDevelopmentProject/v16/.suo
 bin/SoftwareDevelopmentProject.dll
 bin/SoftwareDevelopmentProject.pdb
@@ -33,3 +36,6 @@ packages
 *.pdb
 ~$Defects.xlsx
 .vs/SoftwareDevelopmentProject/v16/.suo
+.vs/SoftwareDevelopmentProject/v16/.suo
+.vs/SoftwareDevelopmentProject/v16/.suo
+bin/SoftwareDevelopmentProject.dll

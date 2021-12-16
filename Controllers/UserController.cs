@@ -38,6 +38,20 @@ namespace SoftwareDevelopmentProject.Controllers
             user userModel = new user();
             return View(userModel);
         }
+
+        public ActionResult Logout()
+        {
+            HttpCookie cookieObj = Request.Cookies["SportUser"];
+            var a = Response.Cookies;
+            if (cookieObj != null )
+            {
+                Response.Cookies["SportUser"].Expires = DateTime.Now.AddMonths(-1);
+            }
+
+            return RedirectToAction("Login", "User");
+
+        }
+
         [HttpPost]
         public ActionResult Registration(user userModel)
         {
