@@ -1,8 +1,9 @@
-﻿<div class="list-group">
-    <button type="button" class="list-group-item list-group-item-action"><a href="/User/AddASportView">Add New Sport</a></button>
-    <button type="button" class="list-group-item list-group-item-action"><a href="/Booking/ViewReservations">View Reservations</a></button>
-    <button type="button" class="list-group-item list-group-item-dark" onclick="logout()">Logout</button>
-</div>
+﻿
+<ul class="list-group">
+    <li class="list-group-item list-group-item-action bg-light"><a href="/User/AddASportView">Add New Sport</a></li>
+    <li class="list-group-item list-group-item-action bg-light"><a href="/Booking/ViewReservations">View Reservations</a></li>
+    <li class="btn list-group-item list-group-item-dark bg-secondary text-light" onclick="logout()">Logout</li>
+</ul>
 
 <script>
     function setCookie(key, value, expireDays, expireHours, expireMinutes, expireSeconds) {
@@ -29,5 +30,5 @@
         setCookie("SportUser", "", null, null, null, 1);
         window.location.href = "/User/Login";
     }
-    
+
 </script>

@@ -30,7 +30,7 @@ namespace SoftwareDevelopmentProject.Controllers
         public ActionResult FaqView()
         {
             ViewBag.Message = "Your application contact page.";
-            return View(new k_singhEntities1().faqs.ToList());
+            return View(new FaqModel().faqs.ToList());
         }
 
 
