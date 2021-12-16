@@ -13,10 +13,10 @@ namespace SoftwareDevelopmentProject.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FaqModel : DbContext
+    public partial class k_singhEntities1 : DbContext
     {
-        public FaqModel()
-            : base("name=FaqModel")
+        public k_singhEntities1()
+            : base("name=k_singhEntities1")
         {
         }
     
