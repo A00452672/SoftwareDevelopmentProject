@@ -60,7 +60,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.cvv, htmlAttributes: new { @class = "control-label col-md-4" })
                     <div class="col-md-8">
-                        @Html.EditorFor(model => model.cvv, new { htmlAttributes = new { @class = "form-control", placeholder = "CVV" } })
+                        @Html.EditorFor(model => model.cvv, new { htmlAttributes = new { @class = "form-control", placeholder = "CVV" ,maxlength = "3"} })
                         @Html.ValidationMessageFor(model => model.cvv, "", new { @class = "text-danger" })
                     </div>
                 </div>
