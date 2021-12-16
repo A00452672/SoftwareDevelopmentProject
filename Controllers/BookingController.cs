@@ -82,7 +82,7 @@ namespace SoftwareDevelopmentProject.Controllers
                         model.SaveChanges();
                     }
                     ModelState.Clear();
-                    ViewBag.SuccessMessage = "Reservation Success";
+                    ViewBag.reservationMade = "1";
                     ViewBag.reservationId = reservation.reservation_id;
                     ViewBag.totalAmount = reservation.totalBookingCost;
                 }

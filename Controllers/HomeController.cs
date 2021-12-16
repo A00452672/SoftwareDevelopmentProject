@@ -31,7 +31,7 @@ namespace SoftwareDevelopmentProject.Controllers
         {
             ViewBag.Message = "Your application contact page.";
 
-            return View(new FaqModel().faqs.ToList());
+            return View();
         }
 
 
