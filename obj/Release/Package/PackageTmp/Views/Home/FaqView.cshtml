@@ -1,0 +1,31 @@
+﻿@model IEnumerable<SoftwareDevelopmentProject.Models.faq>
+
+<div class="form-horizontal">
+    <div class="card text-dark bg-light mb-3">
+        <div class="card-body">
+            <h1 class="fas card-title">BEST SPORTS</h1>
+        </div>
+    </div>
+    <div class="col-md-2">
+        @Html.Partial("UserMenu")
+    </div>
+    <div class="col-md-offset-1 col-md-9">
+        <div class="row">
+            <div class="card card-header col-md-10" style="margin-bottom: 10px; margin-left: 5px;">
+                <h3><strong>Frequently Asked Questions</strong></h3>
+            </div>
+            @foreach (var item in Model)
+            {
+                <div class="card col-md-5" style="margin-bottom: 10px; margin-right: 10px; padding: 0px;">
+                    <div class="card-header bg-success text-light">
+                        <h4><strong>Q. @Html.DisplayFor(modelItem => item.question)</strong></h4>
+                    </div>
+                    <div class="card-body bg-light">
+                        <p class="card-text"><em>@Html.DisplayFor(modelItem => item.answer)</em></p>
+                    </div>
+                </div>
+
+            }
+        </div>
+    </div>
+    </div>

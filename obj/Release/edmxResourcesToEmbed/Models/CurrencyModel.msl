@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="k_singhModel1StoreContainer" CdmEntityContainer="CurrencyModel">
+    <EntitySetMapping Name="currencies">
+      <EntityTypeMapping TypeName="k_singhModel1.currency">
+        <MappingFragment StoreEntitySet="currency">
+          <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+          <ScalarProperty Name="currency_name" ColumnName="currency_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

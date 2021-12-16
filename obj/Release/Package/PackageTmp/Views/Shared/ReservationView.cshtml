@@ -1,0 +1,84 @@
+﻿@model SoftwareDevelopmentProject.Models.reservation
+
+@{
+    ViewBag.Title = "ReservationView";
+}
+@using (Html.BeginForm("PayNow", "Booking", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <div class="card text-dark bg-light mb-3">
+        <div class="card-body">
+            <h1 class="fas card-title">Select Date </h1>
+        </div>
+    </div>
+    <div class="col-md-2">
+        @Html.Partial("UserMenu")
+    </div>
+    <div class="col-md-10">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="card text-center bg-light">
+
+            <div class="card-body">
+                <br /><br />
+                <div class="form-group">
+                    <label for="sportName" class="control-label col-md-4">SPORT NAME</label>
+                    <div class="col-md-8">
+                        <input type="text" id="sportName" name="sportName" class="form-control" value=@ViewBag.sportName disabled readonly>
+                        <input type="hidden" name="sportId" id="sportId" value=@ViewBag.sportId />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.no_of_people, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.no_of_people, new { htmlAttributes = new { @class = "form-control", placeholder = "No of People", @Value = 1, min = "1", max = "10" } })
+                        @Html.ValidationMessageFor(model => model.no_of_people, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.datetime, htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.datetime, new
+                        {
+                            htmlAttributes = new
+                            {
+                                @class = "form-control",
+                                type = "date",
+                                min = @DateTime.Now.ToString("yyyy-MM-dd"),
+                                max = @DateTime.Now.AddDays(90).ToString("yyyy-MM-dd")
+
+                            }
+                         })
+                        @Html.ValidationMessageFor(model => model.datetime, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="sportAmount" class="control-label col-md-4">COST PER PERSON</label>
+                    <div class="col-md-8">
+                        <input type="text" id="sportAmount" name="sportAmount" class="form-control" value=@ViewBag.SportAmount readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-4 col-md-8 text-left">
+                        <input type="submit" value="Book Sport" class="btn btn-primary" />
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+        }
+
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }

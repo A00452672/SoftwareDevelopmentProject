@@ -242,7 +242,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UserModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -321,107 +320,6 @@
       <DependentUpon>UserModel.edmx</DependentUpon>
       <LastGenOutput>UserModel.cs</LastGenOutput>
     </Content>
-    <Content Include="obj\Debug\SoftwareDevelopmentProject.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\TempPE\Models.BookingModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.BookingModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.BookingModel.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.CurrencyModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.CurrencyModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.CurrencyModel.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.CustomerPaymentModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.CustomerPaymentModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.CustomerPaymentModel.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.CustomerPaymentModel1.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.FaqModel.Context1.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.FaqModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.FaqModel1.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.Model1.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.Model1.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.Model1.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.PaymentModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.PaymentModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.PaymentModel.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.ReservationModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.ReservationModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.ReservationModel.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.SportModel - Copy.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.SportModel - Copy.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.SportModel - Copy.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.SportModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.SportModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.SportModel.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.UserModel.Context.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.UserModel.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Models.UserModel.Designer.cs.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Antlr3.Runtime.pdb" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.SqlServer.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Microsoft.Web.Infrastructure.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\Newtonsoft.Json.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\Microsoft.Win32.Primitives.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.AppContext.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Collections.Immutable.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Console.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Diagnostics.DiagnosticSource.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Diagnostics.StackTrace.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Globalization.Calendars.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.Compression.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.Compression.ZipFile.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.FileSystem.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.IO.FileSystem.Primitives.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Net.Http.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Net.Sockets.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Reflection.Metadata.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.Encoding.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.Primitives.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Text.Encoding.CodePages.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Threading.Tasks.Extensions.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.ValueTuple.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.ReaderWriter.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.XmlDocument.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.XPath.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\roslyn\System.Xml.XPath.XDocument.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\SoftwareDevelopmentProject.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\SoftwareDevelopmentProject.pdb" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Helpers.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Mvc.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Optimization.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Razor.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.Deployment.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.WebPages.Razor.dll" />
-    <Content Include="obj\Release\Package\PackageTmp\bin\WebGrease.dll" />
-    <Content Include="obj\Release\SoftwareDevelopmentProject.dll" />
-    <Content Include="obj\Release\SoftwareDevelopmentProject.pdb" />
-    <Content Include="obj\Release\TempPE\Models.CurrencyModel.Context.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.CurrencyModel.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.CurrencyModel.Designer.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.CustomerPaymentModel.Context.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.CustomerPaymentModel.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.CustomerPaymentModel.Designer.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.reservationModel.Context.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.reservationModel.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.reservationModel.Designer.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.SportModel.Context.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.SportModel.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.SportModel.Designer.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.UserModel.Context.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.UserModel.cs.dll" />
-    <Content Include="obj\Release\TempPE\Models.UserModel.Designer.cs.dll" />
     <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll" />
     <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.pdb" />
     <Content Include="packages\bootstrap.3.4.1\contentFiles\Content\bootstrap-theme.css" />
@@ -451,34 +349,6 @@
     <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.dll" />
     <Content Include="packages\EntityFramework.6.1.3\tools\EntityFramework.PowerShell.Utility.dll" />
     <Content Include="packages\EntityFramework.6.1.3\tools\migrate.exe" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CurrencyModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CurrencyModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CurrencyModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModels.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModels.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\CustomerPaymentModels.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\PaymentModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\PaymentModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\PaymentModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\reservationModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\reservationModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\reservationModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\SportModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\SportModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\SportModel.ssdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\UserModel.csdl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\UserModel.msl" />
-    <Content Include="obj\Debug\edmxResourcesToEmbed\Models\UserModel.ssdl" />
-    <Content Include="obj\Debug\SoftwareDevelopmentProject.csproj.AssemblyReference.cache" />
-    <Content Include="obj\Debug\SoftwareDevelopmentProject.csproj.CopyComplete" />
-    <Content Include="obj\Debug\SoftwareDevelopmentProject.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Release\SoftwareDevelopmentProject.csproj.AssemblyReference.cache" />
-    <Content Include="obj\Release\SoftwareDevelopmentProject.csproj.CoreCompileInputs.cache" />
     <Content Include="azure-pipelines.yml" />
     <Content Include="Defects.xlsx" />
     <Content Include=".vs\SoftwareDevelopmentProject\config\applicationhost.config" />
@@ -731,6 +601,8 @@
     <Content Include="packages\Newtonsoft.Json.12.0.2\Newtonsoft.Json.12.0.2.nupkg" />
     <Content Include="packages\WebGrease.1.6.0\.signature.p7s" />
     <Content Include="packages\WebGrease.1.6.0\WebGrease.1.6.0.nupkg" />
+    <None Include="Properties\PublishProfiles\SoftwareProjectApplication - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\SoftwareProjectApplication - Web Deploy1.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -773,24 +645,7 @@
     <Content Include="Views\Shared\UserMenuAdmin.cshtml" />
     <Content Include="Views\Home\FaqView.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\roslyn\" />
-    <Folder Include="obj\Release\CSAutoParameterize\original\Views\" />
-    <Folder Include="obj\Release\CSAutoParameterize\transformed\Views\" />
-    <Folder Include="obj\Release\edmxResourcesToEmbed\Models\" />
-    <Folder Include="obj\Release\Package\PackageTmp\App_Data\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Content\" />
-    <Folder Include="obj\Release\Package\PackageTmp\fonts\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Models\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Scripts\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Views\Home\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Views\Shared\" />
-    <Folder Include="obj\Release\Package\PackageTmp\Views\User\" />
-    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\Views\" />
-    <Folder Include="obj\Release\TransformWebConfig\assist\" />
-    <Folder Include="obj\Release\TransformWebConfig\original\" />
-    <Folder Include="obj\Release\TransformWebConfig\transformed\Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
