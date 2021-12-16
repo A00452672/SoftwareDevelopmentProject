@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SoftwareDevelopmentProject.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,7 +27,13 @@ namespace SoftwareDevelopmentProject.Controllers
 
             return View();
         }
+        public ActionResult FaqView()
+        {
+            ViewBag.Message = "Your application contact page.";
 
-       
+            return View(new FaqModel().faqs.ToList());
+        }
+
+
     }
 }
