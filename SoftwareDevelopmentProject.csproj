@@ -170,6 +170,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerPaymentModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\faq.cs">
+      <DependentUpon>FaqModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FaqModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaqModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FaqModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaqModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\FaqModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FaqModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\reservation.cs">
       <DependentUpon>reservationModel.tt</DependentUpon>
     </Compile>
@@ -259,6 +277,16 @@
       <DependentUpon>CustomerPaymentModel.edmx</DependentUpon>
       <LastGenOutput>CustomerPaymentModel.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\FaqModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FaqModel.edmx</DependentUpon>
+      <LastGenOutput>FaqModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\FaqModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FaqModel.edmx</DependentUpon>
+      <LastGenOutput>FaqModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\reservationModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>reservationModel.edmx</DependentUpon>
@@ -326,6 +354,13 @@
     <Content Include="Models\UserModel.edmx.diagram">
       <DependentUpon>UserModel.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\FaqModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FaqModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\FaqModel.edmx.diagram">
+      <DependentUpon>FaqModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -366,6 +401,7 @@
     <Content Include="Views\Shared\Reservations.cshtml" />
     <Content Include="Views\User\UserMenuAdmin.cshtml" />
     <Content Include="Views\Shared\UserMenuAdmin.cshtml" />
+    <Content Include="Views\Home\FaqView.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
