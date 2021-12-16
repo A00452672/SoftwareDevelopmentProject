@@ -3,107 +3,103 @@
 @{
     ViewBag.Title = "Registration Page";
 }
-
-<h2>Registration Page</h2>
-
-
-@using (Html.BeginForm("Registration","User",FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-    
-<div class="form-horizontal">
-
-    <hr />
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+<div class="row">
+    <div class="card text-dark bg-light mb-3">
+        <div class="card-body text-center">
+            <h1 class="fas card-title">WELCOME TO BEST SPORTS</h1>
         </div>
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", onkeyup = "this.value=this.value.replace(/[^a-zA-Z ]/,'')", onkeydown = "this.value=this.value.replace(/[^a-zA-Z ]/,'')" } })
-            @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", onkeyup = "this.value=this.value.replace(/[^\\d]/,'')", onkeydown = "this.value=this.value.replace(/[^\\d]/,'')", maxlength="10" } })
-            @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <label for="country" class="col-md-2 control-label">Country</label>
-        <div class="col-md-10">
-            <select id="country" name="country" class="form-control">
-                <option value="CANADA">Canada</option>
-                <option value="USA">USA</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.zip_code, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.zip_code, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.zip_code, "", new { @class = "text-danger" })
-            <span class="text-danger" data-valmsg-replace="true">@ViewBag.zip_error</span>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create Account" class="btn btn-default" />
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-6">
-            <label class="label-success">@ViewBag.SuccessMessage</label>
-            <label class="label-danger">@ViewBag.duplicateMessage</label>
-        </div>
-    </div>
-    <div class="col-md-offset-2 col-md-10">
-        <a href="/User/Login">Have an Account? Login!!!</a>
-    </div>
-    <br /><br />
 </div>
-}
+<br />
+<div class="row row-eq-height">
+    <div class="col-md-6">
+        <div class="card"><img src="/Content/images/sports.jpg" /></div>
+    </div>
+    <div class="col-md-5 col-md-offset-1">
+        @using (Html.BeginForm("Registration", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div class="card text-center bg-light">
+                <div class="card-header">
+                    <h2>REGISTER</h2>
+                </div>
+                <div class="card-body">
+                    <br /><br />
+                    <div class="form-horizontal">
 
-<script>
-    function submitUser() {
-        var country = document.getElementById("country").value;
-        var zip_code = document.getElementById("zip_code").value;
-        usRegex = "^\d{5}(-\d{4})?$";
-        caRegex = "^([a-zA-Z][0-9]){3}$";
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
 
-        alert(country)
-        alert(zip_code)
-        val = false;
-        if (country == "CANADA") {
-            caRegex.test(zip_code)
-        }
-        if (country == "USA") {
-            usRegex.test(zip_code)
-        }
-        return false;
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", onkeyup = "this.value=this.value.replace(/[^a-zA-Z ]/,'')", onkeydown = "this.value=this.value.replace(/[^a-zA-Z ]/,'')" } })
+                                @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.phone, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control", onkeyup = "this.value=this.value.replace(/[^\\d]/,'')", onkeydown = "this.value=this.value.replace(/[^\\d]/,'')", maxlength = "10" } })
+                                @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country" class="col-md-4 control-label">Country</label>
+                            <div class="col-md-8">
+                                <select id="country" name="country" class="form-control">
+                                    <option value="CANADA">Canada</option>
+                                    <option value="USA">USA</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.zip_code, htmlAttributes: new { @class = "control-label col-md-4" })
+                            <div class="col-md-8">
+                                @Html.EditorFor(model => model.zip_code, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.zip_code, "", new { @class = "text-danger" })
+                                <span class="text-danger" data-valmsg-replace="true">@ViewBag.zip_error</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-md-offset-4 col-md-8 text-left">
+                                <input type="submit" value="Create Account" class="btn btn-primary" />
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <p class="text-danger col-md-offset-4 col-md-8 text-left">
+                        @ViewBag.SuccessMessage
+                        @ViewBag.duplicateMessage
+                    </p>
+                    <div class="col-md-offset-4 col-md-8 text-left">
+                        <a href="/User/Login">Have an Account? Login!!!</a>
+                    </div>
+                    <br /><br />
+                </div>
+            </div>
+         }
+    </div>
+</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
     }
-</script>
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
