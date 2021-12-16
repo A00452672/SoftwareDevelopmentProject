@@ -1,4 +1,7 @@
 
+bin
+obj
+.vs
 .vs/SoftwareDevelopmentProject/v16/.suo
 bin/SoftwareDevelopmentProject.dll
 bin/SoftwareDevelopmentProject.pdb
